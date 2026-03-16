@@ -195,10 +195,9 @@ namespace Sistema_de_gestion_de_citas_medicas
 
         private void buttonEstadisticas_Click(object sender, EventArgs e)
         {
-            
-            
-            
-            MostrarCitas();
+            int TotalCitas = citas.Count();
+
+            MessageBox.Show("Cantidad total de citas registradas: " + TotalCitas);
         }
     }
 }
