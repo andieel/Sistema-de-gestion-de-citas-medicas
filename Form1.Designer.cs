@@ -139,6 +139,7 @@
             this.buttonMostrar.TabIndex = 12;
             this.buttonMostrar.Text = "Mostrar";
             this.buttonMostrar.UseVisualStyleBackColor = true;
+            this.buttonMostrar.Click += new System.EventHandler(this.buttonMostrar_Click);
             // 
             // buttonOrdenarFecha
             // 
@@ -148,6 +149,7 @@
             this.buttonOrdenarFecha.TabIndex = 13;
             this.buttonOrdenarFecha.Text = "Ordenar por Fecha";
             this.buttonOrdenarFecha.UseVisualStyleBackColor = true;
+            this.buttonOrdenarFecha.Click += new System.EventHandler(this.buttonOrdenarFecha_Click);
             // 
             // buttonOrdenarDoctor
             // 
@@ -157,6 +159,7 @@
             this.buttonOrdenarDoctor.TabIndex = 14;
             this.buttonOrdenarDoctor.Text = "OrdenarDoctor";
             this.buttonOrdenarDoctor.UseVisualStyleBackColor = true;
+            this.buttonOrdenarDoctor.Click += new System.EventHandler(this.buttonOrdenarDoctor_Click);
             // 
             // buttonEstadisticas
             // 
@@ -166,6 +169,7 @@
             this.buttonEstadisticas.TabIndex = 15;
             this.buttonEstadisticas.Text = "Estadisticas";
             this.buttonEstadisticas.UseVisualStyleBackColor = true;
+            this.buttonEstadisticas.Click += new System.EventHandler(this.buttonEstadisticas_Click);
             // 
             // Form1
             // 

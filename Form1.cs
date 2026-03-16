@@ -127,6 +127,79 @@ namespace Sistema_de_gestion_de_citas_medicas
             citas.Add(cita);
             GuardarCita();
         }
+
+        private void MostrarCitas()
+        {
+            List<object> reporte = new List<object>();
+
+            foreach (var c in citas)
+            {
+                Doctor doctor = null;
+                Paciente paciente = null;
+
+                
+                foreach (var d in doctores)
+                {
+                    if (d.Id == c.IdDoctor)
+                    {
+                        doctor = d;
+                        break;
+                    }
+                }
+
+                // Buscar paciente
+                foreach (var p in pacientes)
+                {
+                    if (p.Dpi == c.IdPaciente)
+                    {
+                        paciente = p;
+                        break;
+                    }
+                }
+
+                if (doctor != null && paciente != null)
+                {
+                    reporte.Add(new
+                    {
+                        Doctor = doctor.Nombre,
+                        Especialidad = doctor.Especialidad,
+                        Paciente = paciente.NombreCompleto,
+                        Fecha = c.FechaCita,
+                        Hora = c.HoraCita
+                    });
+                }
+            }
+
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = reporte;
+        }
+
+        private void buttonMostrar_Click(object sender, EventArgs e)
+        {
+          
+            MostrarCitas();
+        }
+
+        private void buttonOrdenarFecha_Click(object sender, EventArgs e)
+        {
+            
+            citas = citas.OrderBy(c => c.FechaCita).ToList();
+            MostrarCitas();
+        }
+
+        private void buttonOrdenarDoctor_Click(object sender, EventArgs e)
+        {
+            doctores = doctores.OrderBy(d => d.Nombre).ToList();
+            MostrarCitas();
+        }
+
+        private void buttonEstadisticas_Click(object sender, EventArgs e)
+        {
+            
+            
+            
+            MostrarCitas();
+        }
     }
 }
 
